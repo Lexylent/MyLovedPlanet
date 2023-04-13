@@ -1,0 +1,76 @@
+/* Hier wird die Hintergrundfarbe und das Hintergrundbild festgelegt */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Hier wird die Kugel als Hintergrundbild festgelegt und zentriert. Das Hintergrundbild wird auf die Größe der Kugel skaliert, um sicherzustellen, dass die gesamte Kugel sichtbar ist. */
+    #globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    margin-top: -300px;
+    margin-left: -300px;
+    background-image: url("kugel.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+  }
+  
+  /* Hier wird die Drehung der Kugel festgelegt */
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  /* Stilregeln für die App-Überschrift */
+  .app-name {
+    font-size: 3rem; 
+    font-weight: bold; 
+    text-align: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    border: 2px solid rgb(10, 10, 10); 
+    padding: 20px; 
+    color: rgb(217, 15, 15); 
+    background-color: #2d307a; 
+  }
+  
+  /* hier wird der Pfeil angebracht*/
+  .arrow-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  z-index: 1;
+  animation: arrow-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .arrow-link:before {
+  content: "\2192";
+  margin-right: 25px;
+  }
+  
+  @keyframes arrow-glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+  }
+  }
