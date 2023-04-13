@@ -2,21 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Verwende das Leaflet CSS von unpkg.com -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    
+    <!-- Stelle sicher, dass du das Leaflet JS nach dem Leaflet CSS einbindest -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>My Loved Planet</title>
+    
+    <title>Die Map</title>
 </head>
 <body>
-    <h1 class="app-name">My loved Planet</h1>
-    <div id="background"></div>
-    <div id="globe"></div>
-    <div class="arrow-container">
-    <a class="arrow-link" href="C:\Users\Alex\Meine Projekte\My loved Planet\Map\index.html">
-        <i class="fas fa-arrow-circle-left">Hier geht es zu der Map</i>
-    </a>
+   
+    <!-- Füge das Dropdown-Menü hinzu -->
+    <div id="dropdown">
+        <label for="places">Hier bin ich schon gewesen</label>
+        <select id="places"></select>
+        <button id="add-place">Ort Hinzufügen</button>
+        <button id="remove-place">Ort Entfernen</button>
+        <!--<button id="upload-photo">Foto hochladen</button>
+        <label for="photo-upload">Fotos</label>
+        <input type="file" id="photo-upload"> -->
+        <input id="place-name" type="text" placeholder="Ort suchen...">
     </div>
-      
-    <!--<scrip src="script.js"></script>-->
+
+    <!-- Erstelle eine DIV mit der ID 'map', die den Rest der Seite ausfüllt -->
+    <div id="map"></div>
+
+    <script src="app.js"></script>
 </body>
 </html>
